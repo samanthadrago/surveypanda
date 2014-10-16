@@ -1,3 +1,47 @@
+# home page
+get '/' do
+  erb :index
+end
+
+#create and edit survey form
+get 'surveys/:id/edit' do
+end
+
+#create/edit survey
+post 'surveys/:id/edit' do
+end
+
+post '/login' do
+  @user = User.find_by_username (params[:username])
+  if @user.password == params[:password]
+    session[:user_id] = @user.id
+    current_user
+    redirect '/home'
+  else
+    flash[:login] = "We couldn't find username or password."
+    redirect '/'-
+end
+
+post '/signup' do
+
+end
+
+#user's profile page
+get '/users/:id' do
+end
+
+post '/logout' do
+end
+
+get 'surveys/:id/take' do
+end
+
+post 'surveys/:id/take' do
+end
+
+get 'surveys/:id/results' do
+end
+
 # get '/' do
 #   redirect '/posts'
 # end

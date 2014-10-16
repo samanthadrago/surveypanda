@@ -1,0 +1,26 @@
+pseudo
+
+index page ('/'):
+-if no session, login/sign up
+-if session, list of surveys they can take, button to create a survey, and logout, link to their surveys
+
+create/edit a survey ('surveys/:id/edit'):
+-form that collects title
+-field for question
+-fields for choices
+-another question button (which uses ajax to add new fields to form)
+-submit button
+
+login ('/login')
+
+signup ('/signup')
+
+profile ('/users/:id')
+-list of surveys
+-information
+
+take survey ('surveys/:id/take')
+
+display results ('surveys/:id/results')
+
+
