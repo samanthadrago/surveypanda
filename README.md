@@ -13,8 +13,8 @@ MVP - use sinatra without dynamic ajax
 * A user can edit their surveys
 
 Next steps - add ajax stuff, styling, extra features
-* A user can create a question on a survey dynamically (with AJAX)
-* A user can create a choice to a question dynamically (with AJAX)
+* x A user can create a question on a survey dynamically (with AJAX)
+* x A user can create a choice to a question dynamically (with AJAX)
 * A user is prompted to sign-in using a pop-up modal
 * A user is prevented from taking a survey more than once
 * A user can view a visualization of survey results

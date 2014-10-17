@@ -38,6 +38,10 @@ body {
   color: gray;
 }
 
+table tr {
+  border: 1px solid black;
+}
+
 /********************************/
 
 .header ul {

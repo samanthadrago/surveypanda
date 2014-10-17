@@ -1,9 +1,28 @@
 $(document).ready(function() {
   // assign click handler to new question button
-  var view = new View();
-  $(".new-question").on("click", $.get('question_template.mst', view.insertQuestion(template));
-  $(".new-choice").on("click", view.insertChoice);
+  view = new View();
+  $(".new-question").on("click", view.insertQuestion);
+  $(".survey-form").on("click", ".new-choice", view.insertChoice);
+  $(".take-survey").on("click", ".vote-button", vote);
+
+
 });
+
+var vote= function(event) {
+		// debugger;
+	  var $target = $(event.target);
+	  var answer = $target.closest('div').find('select').val()
+	  var question_class = $target.closest('div').attr('class');
+	  var question_id = question_class.slice(9)
+	  // debugger;
+    var ajaxCall = $.ajax({
+      url: '/results/create',
+      type: 'POST', 
+      data: {answer: answer}
+      });
+    // debugger;
+    ajaxCall.done(view.update(question_class))
+  }
 
 // function vote(e) {
 //   e.preventDefault()

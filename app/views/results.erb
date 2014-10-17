@@ -1,0 +1,15 @@
+<h1>The results are in for your '<%= @survey.title %>' Survey:</h1>
+
+<% @survey.questions.each do |question| %>
+	<table>
+		<tr>
+			<td><strong><%= question.text %></strong></td>
+		</tr>
+			<% question.choices.each do |choice| %>
+		<tr>
+			<td><%= choice.text %></td>
+			<td><%= choice.responses.length %></td>
+		</tr>
+		<% end %>
+	</table> <br>
+<% end %>
