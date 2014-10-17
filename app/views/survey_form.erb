@@ -1,9 +1,13 @@
 
 <div class="container">
-  <form class="survey-form" name="input" action="/surveys/create" method="post">
-    <h2 class="form-signin-heading">Create Your Survey!</h2>
-    <input type="text" class="input-block-level" placeholder="Title" name="title">
-    <%= erb :_new_question %>
+ <form class="survey-form" name="input" action="/surveys/create" method="post">
+   <h2>Create Your Survey!</h2>
+    <input type="text" placeholder="Survey Title" name="title">
+   <div class="question">
+     <input type="text" class="question" placeholder="Question" name="question_text">
+     <input type="text" class="choice" placeholder="Choice A" name="choice_text_1a">
+    <button class="new-choice" type="button">Add choice</button>
+  </div>
     <button class="new-question" type="button">New question</button>
     <button class="btn btn-large btn-primary" type="submit">Submit</button>
   </form>
