@@ -1,45 +1,85 @@
 # home page
 get '/' do
+  if user_id
+    erb :_header
+  end
   erb :index
 end
 
-#create and edit survey form
-get 'surveys/:id/edit' do
-end
-
-#create/edit survey
-post 'surveys/:id/edit' do
-end
 
 post '/login' do
   @user = User.find_by_username (params[:username])
   if @user.password == params[:password]
     session[:user_id] = @user.id
     current_user
-    redirect '/home'
+    redirect '/'
   else
-    flash[:login] = "We couldn't find username or password."
-    redirect '/'-
+    # flash[:login] = "We couldn't find username or password."
+    redirect '/'
+  end
 end
 
 post '/signup' do
-
+  @user = User.create(params)
+  session[:user_id] = @user.id
+  current_user
+  redirect '/'
+  
 end
 
 #user's profile page
 get '/users/:id' do
+  @profile = User.find(params[:id])
+  if user_id
+    erb :_header
+  end
+  erb :user_profile
 end
 
-post '/logout' do
+get '/logout' do
+  session.clear
+  redirect '/'
 end
 
-get 'surveys/:id/take' do
+# needs work
+get '/surveys/:id/edit' do
+  if user_id
+    erb :_header
+  end
+  erb :edit_survey_form  
 end
 
-post 'surveys/:id/take' do
+#needs work
+post '/surveys/:id/edit' do
+
 end
 
-get 'surveys/:id/results' do
+get '/surveys/create' do
+  # if session[:user_id] != nil
+    erb :_header
+  # end
+  erb :survey_form
+end
+
+post '/surveys/create' do
+  parse_survey_params(params)
+  redirect'/users/:id'
+end
+
+get '/surveys/:id/take' do
+  if current_user
+    erb :_header
+  end
+  @survey = Survey.find(params[:id])
+  erb :take_survey
+end
+
+post '/results/create' do
+  
+  response = Response.create(choice_id: params[:choice_id], user_id: session[:user_id]) 
+end
+
+get '/surveys/:id/results' do
 end
 
 # get '/' do

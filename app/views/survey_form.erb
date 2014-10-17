@@ -1,0 +1,12 @@
+
+<div class="container">
+  <form class="survey-form" name="input" action="/surveys/create" method="post">
+    <h2 class="form-signin-heading">Create Your Survey!</h2>
+    <input type="text" class="input-block-level" placeholder="Title" name="title">
+    <%= erb :_new_question %>
+    <button class="new-question" type="button">New question</button>
+    <button class="btn btn-large btn-primary" type="submit">Submit</button>
+  </form>
+</div>
+
+
