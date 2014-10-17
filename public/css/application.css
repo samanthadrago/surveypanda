@@ -6,6 +6,15 @@ body {
   margin: 0 auto;
 }
 
+.header ul {
+  text-decoration: none;
+  text-align: center;
+}
+
+.header ul li {
+  display: inline-block;
+}
+
 header {
   background-color: #F4712D;
   padding: 5px 5px;

@@ -1,0 +1,19 @@
+
+
+<h1><%= @survey.title %></h1>
+<% counter = 1 %>
+<form action="/results/create" method:"post">
+<% @survey.questions.each do |question| %>
+	<div>
+	<h2><%= "#{counter}. #{question.text}" %></h2>
+			<select name="question_<%= question.id %>">
+				<% question.choices.each do |choice| %> 
+		  		<option value= "<%=choice.id%>"> <%=choice.text%> </option>
+		  	<% end %>
+			</select>
+			<% counter +=1 %>
+			<% end %>
+			<input type="submit" value="Submit">
+	</form>
+	
+	

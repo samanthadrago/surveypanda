@@ -1,0 +1,15 @@
+<ul class ="header">
+	<li><a href= "/">Home</a></li>
+	<li><a href ="/logout">Logout</a></li>
+</ul>
+	
+
+<div>
+	<a href='/surveys/create'><button class="new-survey" type="button">New survey</button></a>
+  <ul>
+  <% surveys = Survey.where(user_id: @profile.id) %>
+  <% surveys.each do |survey| %>
+    <li><%= survey.title %> - edit the survey</li>
+  <% end %>
+  </ul>
+</div>
