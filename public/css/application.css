@@ -1,10 +1,44 @@
 body {
   counter-reset:section;
   background-color: #F6F6EF;
-  font-family: Verdana;
+  font-family: courier;
+  color: black;
   max-width: 700px;
   margin: 0 auto;
 }
+
+.form-signin {
+  margin-left: 30%;
+}
+
+.new-survey {
+  margin-left: 30%;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px 30px 10px 30px;
+  color: black;
+}
+
+.new-survey:hover {
+  background-color: black;
+  color: white;
+}
+
+.links {
+  list-style-type:none;
+}
+
+.links li a {
+  text-decoration: none;
+  color: black;
+}
+
+.links li a:hover {
+  text-decoration: underline;
+  color: gray;
+}
+
+/********************************/
 
 .header ul {
   text-decoration: none;
@@ -16,12 +50,12 @@ body {
 }
 
 header {
-  background-color: #F4712D;
+  background-color: gray;
   padding: 5px 5px;
 }
 
 header h1 {
-  font-size: 11pt;
+  font-size: 1.5em;
   display: inline;
 }
 
