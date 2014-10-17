@@ -1,6 +1,8 @@
 <div>
-	<a href='/surveys/create'><button class="new-survey" type="button">New survey</button></a>
-  <ul>
+  <a href='/surveys/create'><button class="new-survey" type="button">Create A Survey</button></a>
+
+  <p style="margin-left: 6%"><strong>TAKE A SURVEY:</strong></p>
+  <ul class="links">
   <% Survey.all.each do |survey| %>
     <li><a href="/surveys/<%= survey.id %>/take"><%= survey.title %></a></li>
   <% end %>
