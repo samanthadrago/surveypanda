@@ -1,6 +1,6 @@
 # home page
 get '/' do
-  if user_id
+  if session[:user_id]
     erb :_header
   end
   erb :index
@@ -24,13 +24,13 @@ post '/signup' do
   session[:user_id] = @user.id
   current_user
   redirect '/'
-  
+
 end
 
 #user's profile page
 get '/users/:id' do
   @profile = User.find(params[:id])
-  if user_id
+  if session[:user_id]
     erb :_header
   end
   erb :user_profile
@@ -43,10 +43,10 @@ end
 
 # needs work
 get '/surveys/:id/edit' do
-  if user_id
+  if session[:user_id]
     erb :_header
   end
-  erb :edit_survey_form  
+  erb :edit_survey_form
 end
 
 #needs work
@@ -67,7 +67,7 @@ post '/surveys/create' do
 end
 
 get '/surveys/:id/take' do
-  if current_user
+  if session[:user_id]
     erb :_header
   end
   @survey = Survey.find(params[:id])
@@ -75,8 +75,8 @@ get '/surveys/:id/take' do
 end
 
 post '/results/create' do
-  
-  response = Response.create(choice_id: params[:choice_id], user_id: session[:user_id]) 
+
+  response = Response.create(choice_id: params[:choice_id], user_id: session[:user_id])
 end
 
 get '/surveys/:id/results' do

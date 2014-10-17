@@ -5,10 +5,6 @@ helpers do
     end
   end
 
-  def user_id
-    session[:id]
-  end
-
   def parse_survey_params(params)
   	survey_title = params[:title]
   	question_text = params[:question_text_1]
