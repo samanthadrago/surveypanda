@@ -18,5 +18,10 @@ module Seed
     		question.choices << Choice.create(text: Faker::Company.catch_phrase)
     	end
     end
+    Choice.all.each do |choice|
+      rand(5).times do 
+        choice.responses << Response.create(user_id: rand(10))
+      end
+    end
   end
 end

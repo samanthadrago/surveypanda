@@ -63,7 +63,7 @@ end
 
 post '/surveys/create' do
   parse_survey_params(params)
-  redirect'/users/:id'
+  redirect'/'
 end
 
 get '/surveys/:id/take' do

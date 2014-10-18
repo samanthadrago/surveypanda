@@ -1,10 +1,16 @@
 body {
   counter-reset:section;
-  background-color: #F6F6EF;
+  background-color: white;
   font-family: courier;
   color: black;
   max-width: 700px;
   margin: 0 auto;
+}
+
+.panda {
+    height: 300px;
+    width: 300px;
+    margin-left: 30%;
 }
 
 .form-signin {
@@ -46,16 +52,28 @@ table tr {
 
 .header ul {
   text-decoration: none;
-  text-align: center;
+  text-align: right;
 }
 
 .header ul li {
   display: inline-block;
 }
 
+.header li a {
+  text-decoration: none;
+  color: black;
+}
+
+.header li a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
 header {
   background-color: gray;
   padding: 5px 5px;
+  text-align: left;
+  margin-bottom: 10px;
 }
 
 header h1 {
