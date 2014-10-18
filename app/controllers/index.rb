@@ -75,12 +75,13 @@ get '/surveys/:id/take' do
 end
 
 post '/results/create' do
+  Response.create(choice_id: @params["answer"], user_id: session[:user_id])
 
-  response = Response.create(choice_id: params[:choice_id], user_id: session[:user_id])
 end
 
 get '/surveys/:id/results' do
-  
+  @survey = Survey.find(params[:id])
+  erb :results
 end
 
 # get '/' do
