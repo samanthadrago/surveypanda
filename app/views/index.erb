@@ -1,10 +1,6 @@
-<header>
-  <h1>SurveyPanda</h1>
-</header>
-
 <div>
+	<%= erb :_header %>
   <% if current_user %>
-    <%= erb :_header %>
     <%= erb :_signed_in %>
   <% else %>
     <%= erb :_not_signed_in %>
